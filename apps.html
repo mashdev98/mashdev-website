@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoolCheck — Mash Dev LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ——— App hero ——— */
+        .poolcheck-hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem 0 2.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .poolcheck-hero-text h1 {
+            font-size: 3rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .app-badge {
+            display: inline-block;
+            background: #4da6ff;
+            color: #fff;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-tagline {
+            font-size: 1.35rem;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .hero-body {
+            font-size: 1rem;
+            color: #666;
+            max-width: 480px;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-dark {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 0.8rem 1.75rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .btn-dark:hover {
+            background: #2e2e50;
+        }
+
+        .btn-link {
+            display: inline-block;
+            color: #4da6ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .btn-link:hover {
+            color: #3a8fd9;
+        }
+
+        /* ——— Phone frame ——— */
+        .phone-frame {
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+            display: block;
+        }
+
+        .phone-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-phone {
+            width: 210px;
+            flex-shrink: 0;
+        }
+
+        /* ——— Screenshots section ——— */
+        .screenshots-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .screenshots-section h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-sub {
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+
+        .screenshots-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            align-items: end;
+        }
+
+        .screenshot-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .screenshot-item .phone-frame {
+            width: 100%;
+        }
+
+        .screenshot-caption {
+            font-size: 0.825rem;
+            color: #888;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* ——— Features section ——— */
+        .features-section-new {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .features-section-new h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .features-grid-new {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 14px;
+            padding: 1.5rem;
+        }
+
+        .feature-card .ficon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: #1a1a2e;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ——— How it works ——— */
+        .how-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .how-section h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1a1a2e;
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step-item h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* ——— Bottom CTA ——— */
+        .app-bottom-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+
+        .app-bottom-cta h2 {
+            display: block;
+            border: none;
+            margin-bottom: 1rem;
+        }
+
+        .app-bottom-cta p {
+            max-width: 440px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* ——— Responsive ——— */
+        @media (max-width: 768px) {
+            .poolcheck-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-phone {
+                margin: 0 auto;
+                width: 160px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-tagline {
+                font-size: 1.15rem;
+            }
+
+            .poolcheck-hero-text h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-body {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .screenshots-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid-new {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid-new {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Mash Dev</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="apps.html" class="active">Apps</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="poolcheck-hero">
+            <div class="poolcheck-hero-text">
+                <span class="app-badge">Coming Soon to the App Store</span>
+                <h1>PoolCheck</h1>
+                <p class="hero-tagline">Know who's at the pool before you pack up the kids.</p>
+                <p class="hero-body">PoolCheck gives you a live view of which friends are at your neighborhood pool right now. Arrive and it checks you in automatically. Leave and it checks you out. No tapping required.</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn-dark">Get Notified at Launch</a>
+                    <a href="#features" class="btn-link">See features →</a>
+                </div>
+            </div>
+            <div class="hero-phone phone-frame">
+                <img src="images/poolcheck-home.png" alt="PoolCheck home screen showing friends at the pool">
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="screenshots-section">
+            <h2>See PoolCheck in action</h2>
+            <p class="section-sub">Screenshots from the current beta.</p>
+            <div class="screenshots-row">
+                <div class="screenshot-item">
+                    <div class="phone-frame">
+                        <img src="images/poolcheck-home.png" alt="Home feed showing friends at the pool">
+                    </div>
+                    <span class="screenshot-caption">Live pool activity feed</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame">
+                        <img src="images/poolcheck-plan.png" alt="Planning strip showing you're heading to the pool">
+                    </div>
+                    <span class="screenshot-caption">Plan your visit with friends</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame">
+                        <img src="images/poolcheck-friends.png" alt="Friends list showing who's active">
+                    </div>
+                    <span class="screenshot-caption">See your friends at a glance</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame">
+                        <img src="images/poolcheck-settings.png" alt="Settings and profile screen">
+                    </div>
+                    <span class="screenshot-caption">Your profile and preferences</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section-new" id="features">
+            <h2>Everything pool families need</h2>
+            <p class="section-sub">Built for HOA pools, neighborhood swim clubs, and summer regulars.</p>
+
+            <div class="features-grid-new">
+                <div class="feature-card">
+                    <span class="ficon">📍</span>
+                    <h4>Auto Check-In</h4>
+                    <p>Arrive at your pool and PoolCheck checks you in automatically via geofencing. Depart and it checks you out. No interaction needed.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">👨‍👩‍👧‍👦</span>
+                    <h4>Bring the Family</h4>
+                    <p>Add family members and guests. When you check in, choose who's with you. Friends see "Luisa and 2 kids are here."</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">🗓️</span>
+                    <h4>Plan to Go</h4>
+                    <p>Tell friends you're heading over and when. A planning strip on the pool card lets anyone watching know to join you.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">📅</span>
+                    <h4>Pool Events</h4>
+                    <p>Post swim meets, parties, closures, and special hours. Color-coded event pills on pool cards keep members informed at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">🔑</span>
+                    <h4>Deputy Role</h4>
+                    <p>Pool founders can grant trusted members Deputy privileges — letting them update hours and post events together.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">🔍</span>
+                    <h4>Discover Pools Nearby</h4>
+                    <p>When adding a pool, PoolCheck shows you pools already on the app nearby. Tap to join instantly — no codes, no approval needed.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">👋</span>
+                    <h4>Friend-Gated Activity</h4>
+                    <p>Your check-ins and plans are visible only to friends you've approved. Anyone can discover your pool; no one can see your activity uninvited.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">🔕</span>
+                    <h4>Mute &amp; Hide</h4>
+                    <p>Silence notifications from specific friends, or hide your activity from anyone on your list — without removing them.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="ficon">🔔</span>
+                    <h4>Push Notifications</h4>
+                    <p>Get notified when friends arrive, plan a visit, or send a friend request. Notifications are per-friend and fully controllable.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="how-section">
+            <h2>Simple. Automatic. Together.</h2>
+            <p class="section-sub">Three steps and you're set for the season.</p>
+
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Add your pools and friends</h4>
+                    <p>Search for your community pool or drop a pin. Invite neighbors via SMS — they connect automatically when they join.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Enable auto check-in</h4>
+                    <p>Turn on Automatic mode in Location settings. PoolCheck monitors your registered pools in the background and checks you in when you arrive.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Open the app and see who's there</h4>
+                    <p>The home feed shows real-time activity — who's at each pool, how long they've been there, and who's planning to come.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <div class="app-bottom-cta">
+            <h2>Coming to iPhone this summer</h2>
+            <p>PoolCheck is in beta and will be available on the App Store soon. Get in touch to be notified at launch.</p>
+            <a href="contact.html" class="btn-dark">Get in Touch</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Mash Dev LLC</h4>
+                <p>Mobile app development<br>Bethesda, Maryland</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="apps.html">Our Apps</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mash Dev LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
