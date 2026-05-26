@@ -75,9 +75,13 @@ section {
 }
 
 .hero-logo {
-    max-width: 585px;
+    max-width: 878px;
     height: auto;
     margin-bottom: 0;
+}
+
+.intro {
+    padding-top: 1rem;
 }
 
 #hero h1 {
