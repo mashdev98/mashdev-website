@@ -115,15 +115,12 @@ p {
 }
 
 .app-icon {
-    font-size: 4rem;
-    background: linear-gradient(135deg, #4da6ff, #1a1a2e);
     border-radius: 20px;
     width: 100px;
     height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
+    object-fit: cover;
+    display: block;
 }
 
 .app-info h3 {
