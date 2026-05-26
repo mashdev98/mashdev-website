@@ -116,8 +116,8 @@ p {
 
 .app-icon {
     border-radius: 20px;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     flex-shrink: 0;
     object-fit: cover;
     display: block;
