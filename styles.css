@@ -68,14 +68,13 @@ section {
 
 #hero {
     text-align: center;
-    padding: 0.5rem 0 !important;
-    padding-top: 0 !important;
+    padding: 0 !important;
     margin-bottom: 0;
     border-bottom: 1px solid #eee;
 }
 
 .hero-logo {
-    max-width: 878px;
+    max-width: 1200px;
     height: auto;
     margin-bottom: 0;
 }
