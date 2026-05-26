@@ -26,6 +26,15 @@
             line-height: 1.1;
         }
 
+        .poolcheck-hero-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 1.25rem;
+        }
+
         .app-badge {
             display: inline-block;
             background: #4da6ff;
@@ -126,8 +135,8 @@
 
         .screenshots-row {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             align-items: end;
         }
 
@@ -286,7 +295,8 @@
             }
 
             .screenshots-row {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
             }
 
             .features-grid-new {
@@ -324,6 +334,7 @@
         <!-- Hero -->
         <section class="poolcheck-hero">
             <div class="poolcheck-hero-text">
+                <img src="images/poolcheck-icon.png" alt="PoolCheck app icon" class="poolcheck-hero-icon">
                 <span class="app-badge">Coming Soon to the App Store</span>
                 <h1>PoolCheck</h1>
                 <p class="hero-tagline">Know who's at the pool before you pack up the kids.</p>
@@ -348,12 +359,6 @@
                         <img src="images/poolcheck-home.png" alt="Home feed showing friends at the pool">
                     </div>
                     <span class="screenshot-caption">Live pool activity feed</span>
-                </div>
-                <div class="screenshot-item">
-                    <div class="phone-frame">
-                        <img src="images/poolcheck-plan.png" alt="Planning strip showing you're heading to the pool">
-                    </div>
-                    <span class="screenshot-caption">Plan your visit with friends</span>
                 </div>
                 <div class="screenshot-item">
                     <div class="phone-frame">
